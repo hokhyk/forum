@@ -41,4 +41,17 @@ Route::group(['middleware' => 'auth'], function (){
     #================ C H A N N EL S  =================
     Route::resource('channels', 'ChannelsController');
 
+
+    #======  discussions create  ==============
+    Route::get('discussion/create', [
+        'uses' => 'DiscussionsController@create',
+        'as' => 'discussions.create'
+    ]);
+
+    #======= discussions store  ===============
+    Route::post('discussion/store', [
+        'uses' => 'DiscussionsController@store',
+        'as' => 'discussions.store'
+    ]);
+
 });
