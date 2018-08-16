@@ -12,6 +12,7 @@ class Discussion extends Model
         'contenido',
         'user_id',
         'channel_id',
+        'slug',
     ];
 
     public function channel()
