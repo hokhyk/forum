@@ -1,45 +1,41 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Channels</div>
 
-                    <table class="table table-responsive">
-                        <thead>
-                        <th>Name</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                        </thead>
+    <div class="panel panel-default">
+        <div class="panel-heading">Channels</div>
 
-                        <tbody>
-                        @foreach($channels as $channel)
-                            <tr>
+        <table class="table table-responsive">
+            <thead>
+            <th>Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            </thead>
 
-                                <td>{{$channel->title}}</td>
-                                <td>
-                                    <a href="{{route('channels.edit',['channel' => $channel->id ])}}" class="btn btn-info">Edit</a>
-                                </td>
-                                <td>
-                                    <form action="{{route('channels.destroy',['channel' => $channel->id ])}}" method="post">
-                                        {{ csrf_field() }}
+            <tbody>
+            @foreach($channels as $channel)
+                <tr>
 
-                                        {{ method_field('DELETE') }}
-                                        <button href="" class="btn btn-danger" type="submit">Destroy</button>
+                    <td>{{$channel->title}}</td>
+                    <td>
+                        <a href="{{route('channels.edit',['channel' => $channel->id ])}}" class="btn btn-info">Edit</a>
+                    </td>
+                    <td>
+                        <form action="{{route('channels.destroy',['channel' => $channel->id ])}}" method="post">
+                            {{ csrf_field() }}
 
-                                    </form>
+                            {{ method_field('DELETE') }}
+                            <button href="" class="btn btn-danger" type="submit">Destroy</button>
 
-                                </td>
+                        </form>
 
-                            </tr>
-                        @endforeach
-                        </tbody>
+                    </td>
 
-                    </table>
-                </div>
-            </div>
-        </div>
+                </tr>
+            @endforeach
+            </tbody>
+
+        </table>
     </div>
+
 @endsection
