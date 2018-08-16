@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+#================ D I S C U S S  =================
+Route::get('/discuss',function (){
+    return view('discuss');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

@@ -79,11 +79,11 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-group">
-
+                        @foreach($channels as $channel)
                             <li class="list-group-item">
-                                create
+                                {{ $channel->title }}
                             </li>
-
+                        @endforeach
                     </ul>
                 </div>
             </div>
